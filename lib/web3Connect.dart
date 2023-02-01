@@ -37,17 +37,14 @@ class Web3ConnState {
 
 class Web3Connect extends ChangeNotifier {
   bool isLoading = true;
-  final String _apiUrl = "http://192.168.11.12:7545";
-  //   "http://192.168.100.25:7545"; //if using SakuraMobile
-  final String _wsUrl = "ws://192.168.11.12:7545";
-  //   "ws://192.168.100.25:7545"; //if using SakuraMobile
+  final String _apiUrl = "http://YOUR NETWORK IP:7545";
+  final String _wsUrl = "ws://YOUR NETWORK IP:7545";
 
   /* ideally we should be connecting to Metamask (after linking the Ganache
    account to Metamask) to fetch account details, but there are network issues
    with the MetaMask mobile app on the Android simulator that prevent http access
    ie. https required, but Ganache server (localhost) supports http */
-  final String _privateKeyAccount1 =
-      "537fbfc5177d20edc3235823e2073d4a4115c637679bd3852c32bad0fa926aa9";
+  final String _privateKeyAccount1 = "YOUR ACCOUNT PRIVATE KEY";
 
   late Web3Client _client;
   late var _abiCodeToken;
