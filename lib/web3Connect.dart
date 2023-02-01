@@ -48,8 +48,6 @@ class Web3Connect extends ChangeNotifier {
    ie. https required, but Ganache server (localhost) supports http */
   final String _privateKeyAccount1 =
       "537fbfc5177d20edc3235823e2073d4a4115c637679bd3852c32bad0fa926aa9";
-  final String _privateKeyAccount2 =
-      "a421bdff15a4f9b35e82012a4c2536993b55c228202ed2f3ca06d0700263b80f";
 
   late Web3Client _client;
   late var _abiCodeToken;
@@ -66,7 +64,6 @@ class Web3Connect extends ChangeNotifier {
   late ContractFunction _approve;
 
   Web3ConnState _buySellState = Web3ConnState();
-  Web3ConnState _sellBuyState = Web3ConnState();
 
   //constructor
   Web3Connect() {
@@ -114,10 +111,6 @@ class Web3Connect extends ChangeNotifier {
     _buySellState._credentials = EthPrivateKey.fromHex(_privateKeyAccount1);
     _buySellState._swapAddress = await _buySellState.credentials()!.address;
     print(_buySellState._swapAddress);
-
-    _sellBuyState._credentials = EthPrivateKey.fromHex(_privateKeyAccount2);
-    _sellBuyState._swapAddress = await _sellBuyState.credentials()!.address;
-    print(_sellBuyState._swapAddress);
   }
 
   Future<void> getDeployedContract() async {
@@ -134,9 +127,7 @@ class Web3Connect extends ChangeNotifier {
 
   Future<void> getBalances() async {
     await getEthBalance(_buySellState);
-    await getEthBalance(_sellBuyState);
     await getTokenBalance(_buySellState);
-    await getTokenBalance(_sellBuyState);
   }
 
   Future<double> getEthBalance(Web3State) async {
@@ -221,10 +212,6 @@ class Web3Connect extends ChangeNotifier {
 
   Web3ConnState getBuySellState() {
     return _buySellState;
-  }
-
-  Web3ConnState getSellBuyState() {
-    return _sellBuyState;
   }
 
   @override
