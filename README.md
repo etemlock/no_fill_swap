@@ -2,15 +2,10 @@
 
 application that will SWAP Dapp Token for ETH without any wait on fills
 
-## Getting Started
+Original project idea borrowed from :
 
-This project is a starting point for a Flutter application.
+https://github.com/dappuniversity/eth_swap
 
-A few resources to get you started if this is your first Flutter project:
+https://www.youtube.com/watch?v=99pYGpTWcXM
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+however Javascript Front-end is replaced with Flutter in this version
